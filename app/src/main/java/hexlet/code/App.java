@@ -9,6 +9,7 @@ public class App {
 
         Scanner scanner = new Scanner(System.in);
 
+        System.out.print("Your choice: ");
         String userChoice = scanner.next();
 
         switch (userChoice) {

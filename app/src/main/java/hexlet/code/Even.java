@@ -28,7 +28,9 @@ public class Even {
             String rightAnswer = gameNumber % 2 == 0 ? "yes" : "no";
             String compare = userAnswer.equalsIgnoreCase(rightAnswer) ? "Correct!" : userAnswer;
 
-            if (!compare.equals("Correct!")) {
+            if (compare.equals("Correct!")) {
+                System.out.println(compare);
+            } else {
                 System.out.print("'" + compare + "'" + " is wrong answer ;(.");
                 System.out.println(" Correct answer was " + "'" + rightAnswer + "'.");
                 System.out.println("Let's try again, " + userName + "!");
