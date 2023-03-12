@@ -4,28 +4,21 @@ import hexlet.code.Engine;
 import java.util.Scanner;
 import java.util.Arrays;
 public class Progression {
-
-    public static void fillArray(String[] arrayToFill, int progressiveMember) {
-        for (int i = 1; i < arrayToFill.length; i++) {
-            int nextMember = Integer.parseInt(arrayToFill[0]) + progressiveMember * i;
-            arrayToFill[i] = Integer.toString(nextMember);
-        }
-    }
     public static void progression() {
         Scanner scanner = new Scanner(System.in);
 
         String userName = Engine.greetingWithName();
         System.out.println("What number is missing in the progression?");
 
-        for (int i = 0; i <= 3; i++) {
-            if (i == 3) {
-                System.out.println("Congratulations, " + userName);
-            }
+        for (int i = 0; i < 3; i++) {
             String[] arrayOfGame = new String[Engine.randomize(5, 15)];
             int progressiveMember = Engine.randomize(1, 5);
             arrayOfGame[0] = Integer.toString(Engine.randomize());
 
-            fillArray(arrayOfGame, progressiveMember);
+            for (int j = 1; j < arrayOfGame.length; j++) {
+                int nextMember = Integer.parseInt(arrayOfGame[0]) + progressiveMember * j;
+                arrayOfGame[j] = Integer.toString(nextMember);
+            }
 
             int positionToHide = Engine.randomize(arrayOfGame.length);
             String rightAnswer = arrayOfGame[positionToHide];
@@ -40,8 +33,11 @@ public class Progression {
             if (resultOfCompare.equals("False")) {
                 break;
             }
+
+            if (i == 2) {
+                System.out.println("Congratulations, " + userName);
+            }
         }
-        System.out.println("Congratulations, " + userName);
         scanner.close();
     }
 }

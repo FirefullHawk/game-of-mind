@@ -13,6 +13,7 @@ public class Engine {
         System.out.println("6 - Prime");
         System.out.println("0 - Exit");
     }
+
     public static String greetingWithName() {
         Scanner scanner = new Scanner(System.in);
 
