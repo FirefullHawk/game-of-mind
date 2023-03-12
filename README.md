@@ -6,3 +6,5 @@ https://asciinema.org/a/ljbT0snbhmRtPTSlMsT39KmqK - Even game
 https://asciinema.org/a/ACZhZOyicAJNXA8xf91SdovLq - Calc game
 
 https://asciinema.org/a/pcHu63h3iN646sAh13fpX7bzl - OGD game
+
+https://asciinema.org/a/OHzZyPKgH7PKzVBZIB3X1qdgN - Progression game
