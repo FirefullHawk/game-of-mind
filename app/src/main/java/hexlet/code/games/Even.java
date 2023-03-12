@@ -6,11 +6,8 @@ public class Even {
     public static void evenGame() {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Welcome to the Brain Games!");
-        System.out.print("May I have your name? ");
-        String userName = scanner.next();
-        System.out.println("Hello, " + userName + "!");
-        System.out.println("What is the result of the expression?");
+        String userName = Engine.greetingWithName();
+        System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
 
         for (int i = 0; i < 3; i++) {
 
@@ -20,21 +17,13 @@ public class Even {
             String userAnswer = scanner.next();
 
             String rightAnswer = gameNumber % 2 == 0 ? "yes" : "no";
-            String compare = userAnswer.equalsIgnoreCase(rightAnswer) ? "Correct!" : userAnswer;
+            String resultOfCompare = Engine.checkAnswer(userAnswer, rightAnswer, userName);
 
-            if (compare.equals("Correct!")) {
-                System.out.println(compare);
-            } else {
-                System.out.print("'" + compare + "'" + " is wrong answer ;(.");
-                System.out.println(" Correct answer was " + "'" + rightAnswer + "'.");
-                System.out.println("Let's try again, " + userName + "!");
+            if (resultOfCompare.equals("False")) {
                 break;
             }
-
-            if (i == 2) {
-                System.out.println("Congratulations, " + userName);
-            }
         }
+        System.out.println("Congratulations, " + userName);
         scanner.close();
     }
 }

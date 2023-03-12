@@ -1,6 +1,40 @@
 package hexlet.code;
 
+import java.util.Scanner;
 public class Engine {
+
+    public static void startPage() {
+        System.out.println("Please enter the game number and press Enter.");
+        System.out.println("1 - Greet");
+        System.out.println("2 - Even");
+        System.out.println("3 - Calc");
+        System.out.println("4 - GCD");
+        System.out.println("5 - Progression");
+        System.out.println("0 - Exit");
+    }
+
+    public static String greetingWithName() {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Welcome to the Brain Games!");
+        System.out.print("May I have your name? ");
+        String userName = scanner.next();
+        System.out.println("Hello, " + userName + "!");
+        return userName;
+    }
+
+    public static String checkAnswer(String userAnswer, String rightAnswer, String userName) {
+        if (userAnswer.equalsIgnoreCase(rightAnswer)) {
+            System.out.println("Correct!");
+            return "Correct!";
+        } else {
+            System.out.print("'" + userAnswer + "'" + " is wrong answer ;(.");
+            System.out.println(" Correct answer was " + "'" + rightAnswer + "'.");
+            System.out.println("Let's try again, " + userName + "!");
+            return "False";
+        }
+    }
+
     public static int randomize() {
         int startRange = 0;
         int endRange = 100;
@@ -31,9 +65,5 @@ public class Engine {
             case "*" -> firstNumber * secondNumber;
             default -> firstNumber + secondNumber;
         };
-    }
-
-    public static int getGCD(int num1, int num2) {
-        return num2 == 0 ? num1 : getGCD(num2, num1 % num2);
     }
 }
