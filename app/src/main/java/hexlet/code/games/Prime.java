@@ -34,13 +34,10 @@ public class Prime {
             String resultOfCompare = Engine.checkAnswer(userAnswer, rightAnswer, userName);
 
             if (resultOfCompare.equals("False")) {
-                break;
-            }
-
-            if (i == 2) {
-                System.out.println("Congratulations, " + userName);
+                return;
             }
         }
+        System.out.println("Congratulations, " + userName);
         scanner.close();
     }
 }
