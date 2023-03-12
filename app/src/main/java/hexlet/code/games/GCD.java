@@ -14,7 +14,7 @@ public class GCD {
         String userName = Engine.greetingWithName();
         System.out.println("Find the greatest common divisor of given numbers.");
 
-        for (int i = 0; i < Engine.gameTurns(); i++) {
+        for (int i = 0; i < 3; i++) {
 
             int gameNumber1 = Engine.randomize(1, 30);
             int gameNumber2 = Engine.randomize(1, 30);

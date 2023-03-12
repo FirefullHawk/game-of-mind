@@ -17,7 +17,7 @@ public class Progression {
         String userName = Engine.greetingWithName();
         System.out.println("What number is missing in the progression?");
 
-        for (int i = 0; i < Engine.gameTurns(); i++) {
+        for (int i = 0; i < 3; i++) {
             String[] arrayOfGame = new String[Engine.randomize(5, 15)];
             int progressiveMember = Engine.randomize(1, 5);
             arrayOfGame[0] = Integer.toString(Engine.randomize());
