@@ -9,7 +9,7 @@ public class Calc {
         String userName = Engine.greetingWithName();
         System.out.println("What is the result of the expression?");
 
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < Engine.gameTurns(); i++) {
 
             int gameNumber1 = Engine.randomize(30);
             int gameNumber2 = Engine.randomize(30);
@@ -22,13 +22,10 @@ public class Calc {
             String resultOfCompare = Engine.checkAnswer(userAnswer, rightAnswer, userName);
 
             if (resultOfCompare.equals("False")) {
-                break;
-            }
-
-            if (i == 2) {
-                System.out.println("Congratulations, " + userName);
+                return;
             }
         }
+        System.out.println("Congratulations, " + userName);
         scanner.close();
     }
 }

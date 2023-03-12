@@ -9,7 +9,7 @@ public class Even {
         String userName = Engine.greetingWithName();
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
 
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < Engine.gameTurns(); i++) {
 
             int gameNumber = Engine.randomize();
             System.out.println("Question: " + gameNumber);

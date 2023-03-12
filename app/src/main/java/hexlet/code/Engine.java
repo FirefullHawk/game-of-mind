@@ -14,6 +14,9 @@ public class Engine {
         System.out.println("0 - Exit");
     }
 
+    public static int gameTurns() {
+        return 3;
+    }
     public static String greetingWithName() {
         Scanner scanner = new Scanner(System.in);
 

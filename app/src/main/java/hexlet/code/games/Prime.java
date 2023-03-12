@@ -5,9 +5,12 @@ import hexlet.code.Engine;
 import java.util.Scanner;
 public class Prime {
     public static boolean isPrime(int number) {
-        if(number < 2) return false;
+        if (number < 2) {
+            return false;
+        }
+
         for (int i = 2; i < number; i++) {
-            if(number % i == 0) {
+            if (number % i == 0) {
                 return false;
             }
         }
@@ -20,7 +23,7 @@ public class Prime {
         String userName = Engine.greetingWithName();
         System.out.println("Answer 'yes' if the number is prime, otherwise answer 'no'.");
 
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < Engine.gameTurns(); i++) {
 
             int gameNumber = Engine.randomize();
             System.out.println("Question: " + gameNumber);
