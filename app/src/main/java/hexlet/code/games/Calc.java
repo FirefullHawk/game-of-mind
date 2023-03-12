@@ -14,8 +14,8 @@ public class Calc {
 
         for (int i = 0; i < 3; i++) {
 
-            int gameNumber1 = Engine.randomize(20);
-            int gameNumber2 = Engine.randomize(20);
+            int gameNumber1 = Engine.randomize(30);
+            int gameNumber2 = Engine.randomize(30);
             String gameOperator = Engine.operationRandomize();
             System.out.println("Question: " + gameNumber1 + " " + gameOperator + " " + gameNumber2);
             System.out.print("Your answer: ");

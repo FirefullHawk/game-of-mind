@@ -1,26 +1,29 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+
 import java.util.Scanner;
-public class Even {
-    public static void evenGame() {
+
+public class GCD {
+    public static void gcdGame() {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Welcome to the Brain Games!");
         System.out.print("May I have your name? ");
         String userName = scanner.next();
         System.out.println("Hello, " + userName + "!");
-        System.out.println("What is the result of the expression?");
+        System.out.println("Find the greatest common divisor of given numbers.");
 
         for (int i = 0; i < 3; i++) {
 
-            int gameNumber = Engine.randomize();
-            System.out.println("Question: " + gameNumber);
+            int gameNumber1 = Engine.randomize(1, 30);
+            int gameNumber2 = Engine.randomize(1, 30);
+            System.out.println("Question: " + gameNumber1 + " " + gameNumber2);
             System.out.print("Your answer: ");
             String userAnswer = scanner.next();
 
-            String rightAnswer = gameNumber % 2 == 0 ? "yes" : "no";
-            String compare = userAnswer.equalsIgnoreCase(rightAnswer) ? "Correct!" : userAnswer;
+            int rightAnswer = Engine.getGCD(gameNumber1, gameNumber2);
+            String compare = userAnswer.equalsIgnoreCase(Integer.toString(rightAnswer)) ? "Correct!" : userAnswer;
 
             if (compare.equals("Correct!")) {
                 System.out.println(compare);
