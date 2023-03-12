@@ -1,15 +1,9 @@
-package hexlet.code;
+package hexlet.code.games;
+
+import hexlet.code.Engine;
 import java.util.Scanner;
-public class Even {
-
-    public static int randomize() {
-
-        int startRange = 0;
-        int endRange = 100;
-        return startRange + (int) (Math.random() * endRange);
-    }
-    public static void evenGame() {
-
+public class Calc {
+    public static void calcGame() {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Welcome to the Brain Games!");
@@ -20,13 +14,15 @@ public class Even {
 
         for (int i = 0; i < 3; i++) {
 
-            int gameNumber = randomize();
-            System.out.println("Question: " + gameNumber);
+            int gameNumber1 = Engine.randomize(20);
+            int gameNumber2 = Engine.randomize(20);
+            String gameOperator = Engine.operationRandomize();
+            System.out.println("Question: " + gameNumber1 + " " + gameOperator + " " + gameNumber2);
             System.out.print("Your answer: ");
             String userAnswer = scanner.next();
 
-            String rightAnswer = gameNumber % 2 == 0 ? "yes" : "no";
-            String compare = userAnswer.equalsIgnoreCase(rightAnswer) ? "Correct!" : userAnswer;
+            int rightAnswer = Engine.operationSwitch(gameNumber1, gameNumber2, gameOperator);
+            String compare = userAnswer.equalsIgnoreCase(Integer.toString(rightAnswer)) ? "Correct!" : userAnswer;
 
             if (compare.equals("Correct!")) {
                 System.out.println(compare);
@@ -41,5 +37,6 @@ public class Even {
                 System.out.println("Congratulations, " + userName);
             }
         }
+        scanner.close();
     }
 }
