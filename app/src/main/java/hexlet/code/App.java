@@ -18,6 +18,7 @@ public class App {
             case "3" -> Calc.calcGame();
             case "4" -> GCD.gcdGame();
             case "5" -> Progression.progression();
+            case "6" -> Prime.primeGame();
             case "0" -> {
                 return;
             }
