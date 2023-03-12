@@ -1,13 +1,15 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
-
 import java.util.Scanner;
 public class Prime {
     public static boolean isPrime(int number) {
-        if(number < 2) return false;
+        if (number < 2) {
+            return false;
+        }
+
         for (int i = 2; i < number; i++) {
-            if(number % i == 0) {
+            if (number % i == 0) {
                 return false;
             }
         }
@@ -31,13 +33,10 @@ public class Prime {
             String resultOfCompare = Engine.checkAnswer(userAnswer, rightAnswer, userName);
 
             if (resultOfCompare.equals("False")) {
-                break;
-            }
-
-            if (i == 2) {
-                System.out.println("Congratulations, " + userName);
+                return;
             }
         }
+        System.out.println("Congratulations, " + userName);
         scanner.close();
     }
 }

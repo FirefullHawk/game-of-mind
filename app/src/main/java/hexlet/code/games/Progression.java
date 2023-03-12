@@ -4,6 +4,13 @@ import hexlet.code.Engine;
 import java.util.Scanner;
 import java.util.Arrays;
 public class Progression {
+
+    public static void fillArray(String[] arrayToFill, int progressiveMember) {
+        for (int i = 1; i < arrayToFill.length; i++) {
+            int nextMember = Integer.parseInt(arrayToFill[0]) + progressiveMember * i;
+            arrayToFill[i] = Integer.toString(nextMember);
+        }
+    }
     public static void progression() {
         Scanner scanner = new Scanner(System.in);
 
@@ -15,10 +22,7 @@ public class Progression {
             int progressiveMember = Engine.randomize(1, 5);
             arrayOfGame[0] = Integer.toString(Engine.randomize());
 
-            for (int j = 1; j < arrayOfGame.length; j++) {
-                int nextMember = Integer.parseInt(arrayOfGame[0]) + progressiveMember * j;
-                arrayOfGame[j] = Integer.toString(nextMember);
-            }
+            fillArray(arrayOfGame, progressiveMember);
 
             int positionToHide = Engine.randomize(arrayOfGame.length);
             String rightAnswer = arrayOfGame[positionToHide];
@@ -31,13 +35,10 @@ public class Progression {
             String resultOfCompare = Engine.checkAnswer(userAnswer, rightAnswer, userName);
 
             if (resultOfCompare.equals("False")) {
-                break;
-            }
-
-            if (i == 2) {
-                System.out.println("Congratulations, " + userName);
+                return;
             }
         }
+        System.out.println("Congratulations, " + userName);
         scanner.close();
     }
 }
