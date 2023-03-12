@@ -33,8 +33,11 @@ public class Progression {
             if (resultOfCompare.equals("False")) {
                 break;
             }
+
+            if (i == 2) {
+                System.out.println("Congratulations, " + userName);
+            }
         }
-        System.out.println("Congratulations, " + userName);
         scanner.close();
     }
 }
