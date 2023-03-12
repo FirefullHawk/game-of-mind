@@ -9,8 +9,10 @@ public class Calc {
         String userName = Engine.greetingWithName();
         System.out.println("What is the result of the expression?");
 
-        for (int i = 0; i < 3; i++) {
-
+        for (int i = 0; i <= 3; i++) {
+            if (i == 3) {
+                System.out.println("Congratulations, " + userName);
+            }
             int gameNumber1 = Engine.randomize(30);
             int gameNumber2 = Engine.randomize(30);
             String gameOperator = Engine.operationRandomize();
@@ -22,10 +24,9 @@ public class Calc {
             String resultOfCompare = Engine.checkAnswer(userAnswer, rightAnswer, userName);
 
             if (resultOfCompare.equals("False")) {
-                return;
+                break;
             }
         }
-        System.out.println("Congratulations, " + userName);
         scanner.close();
     }
 }

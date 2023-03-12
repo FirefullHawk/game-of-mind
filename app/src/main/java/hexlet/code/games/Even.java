@@ -9,7 +9,11 @@ public class Even {
         String userName = Engine.greetingWithName();
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
 
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i <= 3; i++) {
+
+            if (i == 3) {
+                System.out.println("Congratulations, " + userName);
+            }
 
             int gameNumber = Engine.randomize();
             System.out.println("Question: " + gameNumber);
@@ -20,10 +24,9 @@ public class Even {
             String resultOfCompare = Engine.checkAnswer(userAnswer, rightAnswer, userName);
 
             if (resultOfCompare.equals("False")) {
-                return;
+                break;
             }
         }
-        System.out.println("Congratulations, " + userName);
         scanner.close();
     }
 }
