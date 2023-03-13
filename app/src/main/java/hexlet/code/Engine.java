@@ -46,11 +46,12 @@ public class Engine {
 
     public static int randomize() {
         int startRange = 0;
-        return startRange + (int) (Math.random() * 100);
+        final int endRange = 100;
+        return startRange + (int) (Math.random() * endRange);
     }
 
     public static int randomize(int endRange) {
-        int startRange = 0;
+        int startRange = 1;
         return startRange + (int) (Math.random() * endRange);
     }
 
@@ -59,7 +60,8 @@ public class Engine {
     }
 
     public static String operationRandomize() {
-        String chooser = Integer.toString(randomize(3));
+        final int numOfOperation = 3;
+        String chooser = Integer.toString(randomize(numOfOperation));
         return switch (chooser) {
             case "1" -> "-";
             case "2" -> "*";

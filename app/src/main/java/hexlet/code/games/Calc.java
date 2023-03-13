@@ -10,7 +10,7 @@ public class Calc {
         System.out.println("What is the result of the expression?");
 
         for (int i = 0; i < Engine.gameRound(); i++) {
-            int setNumber = +30;
+            final int setNumber = 30;
             int gameNumber1 = Engine.randomize(setNumber);
             int gameNumber2 = Engine.randomize(setNumber);
             String gameOperator = Engine.operationRandomize();
