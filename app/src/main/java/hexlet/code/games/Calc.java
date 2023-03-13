@@ -25,7 +25,7 @@ public class Calc {
                 return;
             }
         }
-        System.out.println("Congratulations, " + userName);
+        Engine.congratulations(userName);
         scanner.close();
     }
 }

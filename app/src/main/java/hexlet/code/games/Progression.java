@@ -38,7 +38,7 @@ public class Progression {
                 return;
             }
         }
-        System.out.println("Congratulations, " + userName);
+        Engine.congratulations(userName);
         scanner.close();
     }
 }

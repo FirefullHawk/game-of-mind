@@ -24,6 +24,10 @@ public class Engine {
         return userName;
     }
 
+    public static void congratulations (String userName) {
+        System.out.println("Congratulations, " + userName + "!");
+    }
+
     public static String checkAnswer(String userAnswer, String rightAnswer, String userName) {
         if (userAnswer.equalsIgnoreCase(rightAnswer)) {
             System.out.println("Correct!");
