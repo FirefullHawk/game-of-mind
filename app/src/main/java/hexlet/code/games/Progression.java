@@ -26,7 +26,7 @@ public class Progression {
 
             int positionToHide = Engine.randomize(arrayOfGame.length);
             String rightAnswer = arrayOfGame[positionToHide];
-            arrayOfGame[positionToHide] = "**";
+            arrayOfGame[positionToHide] = "..";
 
             System.out.println("Question: " + Arrays.toString(arrayOfGame));
             System.out.print("Your answer: ");
