@@ -20,10 +20,10 @@ public class Progression {
         for (int i = 0; i < Engine.gameRound(); i++) {
             int minRangeArray = 5;
             int maxRangeArray = 15;
-            int startDifficult = 1;
-            int endDifficult = 5;
+            int minProgressiveNumber = 1;
+            int maxProgressiveNumber = 5;
             String[] arrayOfGame = new String[Engine.randomize(minRangeArray, maxRangeArray)];
-            int progressiveMember = Engine.randomize(startDifficult, endDifficult);
+            int progressiveMember = Engine.randomize(minProgressiveNumber, maxProgressiveNumber);
             arrayOfGame[0] = Integer.toString(Engine.randomize());
 
             fillArray(arrayOfGame, progressiveMember);

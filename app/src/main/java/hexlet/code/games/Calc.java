@@ -10,9 +10,9 @@ public class Calc {
         System.out.println("What is the result of the expression?");
 
         for (int i = 0; i < Engine.gameRound(); i++) {
-            int setDifficult = 30;
-            int gameNumber1 = Engine.randomize(setDifficult);
-            int gameNumber2 = Engine.randomize(setDifficult);
+            int setNumber = 30;
+            int gameNumber1 = Engine.randomize(setNumber);
+            int gameNumber2 = Engine.randomize(setNumber);
             String gameOperator = Engine.operationRandomize();
             System.out.println("Question: " + gameNumber1 + " " + gameOperator + " " + gameNumber2);
             System.out.print("Your answer: ");
