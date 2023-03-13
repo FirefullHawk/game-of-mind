@@ -16,7 +16,7 @@ public class GCD {
 
         for (int i = 0; i < Engine.gameRound(); i++) {
             int setStart = 1;
-            int setMaxNumber = 30;
+            int setMaxNumber = +30;
             int gameNumber1 = Engine.randomize(setStart, setMaxNumber);
             int gameNumber2 = Engine.randomize(setStart, setMaxNumber);
             System.out.println("Question: " + gameNumber1 + " " + gameNumber2);
