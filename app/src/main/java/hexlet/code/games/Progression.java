@@ -18,10 +18,11 @@ public class Progression {
         System.out.println("What number is missing in the progression?");
 
         for (int i = 0; i < Engine.gameRound(); i++) {
-            int minRangeArray = +5;
-            int maxRangeArray = +15;
+            int minRangeArray = 5;
+            int maxRangeArray = 15;
             int minProgressiveNumber = 1;
-            int maxProgressiveNumber = +5;
+            int maxProgressiveNumber = 5;
+
             String[] arrayOfGame = new String[Engine.randomize(minRangeArray, maxRangeArray)];
             int progressiveMember = Engine.randomize(minProgressiveNumber, maxProgressiveNumber);
             arrayOfGame[0] = Integer.toString(Engine.randomize());

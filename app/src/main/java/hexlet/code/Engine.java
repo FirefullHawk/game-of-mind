@@ -29,7 +29,8 @@ public class Engine {
     }
 
     public static int gameRound() {
-        return +3;
+        int countRound = 3;
+        return countRound;
     }
     public static String checkAnswer(String userAnswer, String rightAnswer, String userName) {
         if (userAnswer.equalsIgnoreCase(rightAnswer)) {
@@ -45,8 +46,7 @@ public class Engine {
 
     public static int randomize() {
         int startRange = 0;
-        int numberOrder = + 100;
-        return startRange + (int) (Math.random() * numberOrder);
+        return startRange + (int) (Math.random() * 100);
     }
 
     public static int randomize(int endRange) {
@@ -59,7 +59,7 @@ public class Engine {
     }
 
     public static String operationRandomize() {
-        String chooser = Integer.toString(randomize(+3));
+        String chooser = Integer.toString(randomize(3));
         return switch (chooser) {
             case "1" -> "-";
             case "2" -> "*";
