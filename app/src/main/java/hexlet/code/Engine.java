@@ -24,7 +24,7 @@ public class Engine {
         return userName;
     }
 
-    public static void congratulations (String userName) {
+    public static void congratulations(String userName) {
         System.out.println("Congratulations, " + userName + "!");
     }
 

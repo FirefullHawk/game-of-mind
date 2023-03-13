@@ -2,7 +2,7 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 import java.util.Scanner;
-import java.util.Arrays;
+
 public class Progression {
 
     public static void fillArray(String[] arrayToFill, int progressiveMember) {
@@ -28,7 +28,8 @@ public class Progression {
             String rightAnswer = arrayOfGame[positionToHide];
             arrayOfGame[positionToHide] = "..";
 
-            System.out.println("Question: " + Arrays.toString(arrayOfGame));
+            System.out.print("Question: ");
+            System.out.println(String.join(" ", arrayOfGame));
             System.out.print("Your answer: ");
             String userAnswer = scanner.next();
 
