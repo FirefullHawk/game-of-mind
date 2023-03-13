@@ -29,8 +29,8 @@ public class Engine {
     }
 
     public static int gameRound() {
-        int countRound = 3;
-        return countRound;
+        final int gameRound = 3;
+        return gameRound;
     }
     public static String checkAnswer(String userAnswer, String rightAnswer, String userName) {
         if (userAnswer.equalsIgnoreCase(rightAnswer)) {
