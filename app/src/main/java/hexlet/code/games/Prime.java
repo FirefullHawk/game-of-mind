@@ -20,7 +20,7 @@ public class Prime {
         Scanner scanner = new Scanner(System.in);
 
         String userName = Engine.greetingWithName();
-        System.out.println("Answer 'yes' if the number is prime, otherwise answer 'no'.");
+        System.out.println("Answer 'yes' if given the number is prime, otherwise answer 'no'.");
 
         for (int i = 0; i < 3; i++) {
 
