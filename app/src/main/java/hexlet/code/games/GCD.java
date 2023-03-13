@@ -14,10 +14,11 @@ public class GCD {
         String userName = Engine.greetingWithName();
         System.out.println("Find the greatest common divisor of given numbers.");
 
-        for (int i = 0; i < 3; i++) {
-
-            int gameNumber1 = Engine.randomize(1, 30);
-            int gameNumber2 = Engine.randomize(1, 30);
+        for (int i = 0; i < Engine.gameRound(); i++) {
+            int setStart = 1;
+            int setEnd = 30;
+            int gameNumber1 = Engine.randomize(setStart, setEnd);
+            int gameNumber2 = Engine.randomize(setStart, setEnd);
             System.out.println("Question: " + gameNumber1 + " " + gameNumber2);
             System.out.print("Your answer: ");
             String userAnswer = scanner.next();

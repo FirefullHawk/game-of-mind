@@ -22,7 +22,7 @@ public class Prime {
         String userName = Engine.greetingWithName();
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
 
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < Engine.gameRound(); i++) {
 
             int gameNumber = Engine.randomize();
             System.out.println("Question: " + gameNumber);

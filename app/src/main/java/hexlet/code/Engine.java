@@ -28,6 +28,10 @@ public class Engine {
         System.out.println("Congratulations, " + userName + "!");
     }
 
+    public static int gameRound() {
+        int countRound = 3;
+        return countRound;
+    }
     public static String checkAnswer(String userAnswer, String rightAnswer, String userName) {
         if (userAnswer.equalsIgnoreCase(rightAnswer)) {
             System.out.println("Correct!");
@@ -42,8 +46,8 @@ public class Engine {
 
     public static int randomize() {
         int startRange = 0;
-        int endRange = 100;
-        return startRange + (int) (Math.random() * endRange);
+        int endOfRange = 101;
+        return startRange + (int) (Math.random() * endOfRange);
     }
 
     public static int randomize(int endRange) {
@@ -56,10 +60,11 @@ public class Engine {
     }
 
     public static String operationRandomize() {
-        int chooser = randomize(10);
+        int endOfRange = 3;
+        String chooser = Integer.toString(randomize(endOfRange));
         return switch (chooser) {
-            case 1, 2, 3 -> "-";
-            case 4, 5, 6 -> "*";
+            case "1" -> "-";
+            case "2" -> "*";
             default -> "+";
         };
     }
