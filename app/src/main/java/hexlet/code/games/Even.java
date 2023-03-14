@@ -1,6 +1,8 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Utils;
+
 import java.util.Scanner;
 public class Even {
     public static void evenGame() {
@@ -9,9 +11,9 @@ public class Even {
         String userName = Engine.greetingWithName();
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
 
-        for (int i = 0; i < Engine.gameRound(); i++) {
+        for (int i = 0; i < Engine.GAME_ROUND; i++) {
 
-            int gameNumber = Engine.randomize();
+            int gameNumber = Utils.randomize();
             System.out.println("Question: " + gameNumber);
             System.out.print("Your answer: ");
             String userAnswer = scanner.next();

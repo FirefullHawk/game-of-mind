@@ -1,6 +1,8 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Utils;
+
 import java.util.Scanner;
 
 public class Progression {
@@ -17,18 +19,18 @@ public class Progression {
         String userName = Engine.greetingWithName();
         System.out.println("What number is missing in the progression?");
 
-        for (int i = 0; i < Engine.gameRound(); i++) {
+        for (int i = 0; i < Engine.GAME_ROUND; i++) {
             final int minRangeArray = 5;
             final int maxRangeArray = 15;
             final int maxProgressiveNumber = 5;
 
-            String[] arrayOfGame = new String[Engine.randomize(minRangeArray, maxRangeArray)];
-            int progressiveMember = Engine.randomize(maxProgressiveNumber);
-            arrayOfGame[0] = Integer.toString(Engine.randomize());
+            String[] arrayOfGame = new String[Utils.randomize(minRangeArray, maxRangeArray)];
+            int progressiveMember = Utils.randomize(maxProgressiveNumber);
+            arrayOfGame[0] = Integer.toString(Utils.randomize());
 
             fillArray(arrayOfGame, progressiveMember);
 
-            int positionToHide = Engine.randomize(arrayOfGame.length);
+            int positionToHide = Utils.randomize(arrayOfGame.length);
             String rightAnswer = arrayOfGame[positionToHide];
             arrayOfGame[positionToHide] = "..";
 
