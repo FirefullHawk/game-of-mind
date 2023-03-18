@@ -35,4 +35,23 @@ public class Engine {
             return "False";
         }
     }
+
+    public static void gameRun(String gameRules, String[][] roundInfo) {
+        String userName = Engine.greetingWithName();
+
+        System.out.println(gameRules);
+
+        for (int i = 0; i < Engine.GAME_ROUND; i++) {
+            System.out.println(roundInfo[i][0]);
+            System.out.print("Your answer: ");
+            String userAnswer = getUserAnswer();
+
+            String resultOfCompare = Engine.checkAnswer(userAnswer, roundInfo[i][1], userName);
+
+            if (resultOfCompare.equals("False")) {
+                return;
+            }
+        }
+        congratulations(userName);
+    }
 }

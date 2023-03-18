@@ -3,8 +3,6 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 import hexlet.code.Utils;
 
-import java.util.Scanner;
-
 public class Progression {
 
     public static void fillArray(String[] arrayToFill, int progressiveMember) {
@@ -14,10 +12,9 @@ public class Progression {
         }
     }
     public static void progression() {
-        Scanner scanner = new Scanner(System.in);
+        String gameRule = "What number is missing in the progression?";
 
-        String userName = Engine.greetingWithName();
-        System.out.println("What number is missing in the progression?");
+        var roundInfo = new String[Engine.GAME_ROUND][Engine.GAME_ROUND - 1];
 
         for (int i = 0; i < Engine.GAME_ROUND; i++) {
             final int minRangeArray = 5;
@@ -34,18 +31,9 @@ public class Progression {
             String rightAnswer = arrayOfGame[positionToHide];
             arrayOfGame[positionToHide] = "..";
 
-            System.out.print("Question: ");
-            System.out.println(String.join(" ", arrayOfGame));
-            System.out.print("Your answer: ");
-            String userAnswer = scanner.next();
-
-            String resultOfCompare = Engine.checkAnswer(userAnswer, rightAnswer, userName);
-
-            if (resultOfCompare.equals("False")) {
-                return;
-            }
+            roundInfo[i][0] = "Question: " + String.join(" ", arrayOfGame);
+            roundInfo[i][1] = rightAnswer;
         }
-        Engine.congratulations(userName);
-        scanner.close();
+        Engine.gameRun(gameRule, roundInfo);
     }
 }

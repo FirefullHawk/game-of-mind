@@ -22,27 +22,22 @@ public class Calc {
         };
     }
     public static void calcGame() {
+        String gameRule = "What is the result of the expression?";
 
-        String userName = Engine.greetingWithName();
-        System.out.println("What is the result of the expression?");
+        var roundInfo = new String[Engine.GAME_ROUND][Engine.GAME_ROUND - 1];
 
         for (int i = 0; i < Engine.GAME_ROUND; i++) {
-            final int setNumber = 30;
-            int gameNumber1 = Utils.randomize(setNumber);
-            int gameNumber2 = Utils.randomize(setNumber);
-            String gameOperator = operationRandomize();
-            System.out.println("Question: " + gameNumber1 + " " + gameOperator + " " + gameNumber2);
-            System.out.print("Your answer: ");
 
-            String userAnswer = Engine.getUserAnswer();
+            final int setDifficult = 30;
+            int gameNumber1 = Utils.randomize(setDifficult);
+            int gameNumber2 = Utils.randomize(setDifficult);
+            String gameOperator = operationRandomize();
 
             String rightAnswer = Integer.toString(operationSwitch(gameNumber1, gameNumber2, gameOperator));
-            String resultOfCompare = Engine.checkAnswer(userAnswer, rightAnswer, userName);
 
-            if (resultOfCompare.equals("False")) {
-                return;
-            }
+            roundInfo[i][0] = "Question: " + gameNumber1 + " " + gameOperator + " " + gameNumber2;
+            roundInfo[i][1] = rightAnswer;
         }
-        Engine.congratulations(userName);
+        Engine.gameRun(gameRule, roundInfo);
     }
 }
