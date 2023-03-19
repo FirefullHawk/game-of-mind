@@ -2,7 +2,6 @@ package hexlet.code;
 
 import java.util.Scanner;
 public class Engine {
-
     public static final int GAME_ROUND = 3;
 
     public static void gameRun(String gameRules, String[][] gameMatrix) {

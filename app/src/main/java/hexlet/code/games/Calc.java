@@ -38,9 +38,9 @@ public class Calc {
     }
 
     public static void calcGame() {
-        String gameRule = "What is the result of the expression?";
-
         var gameMatrix = new String[Engine.GAME_ROUND][Engine.GAME_ROUND - 1];
+
+        String gameRule = "What is the result of the expression?";
 
         for (int i = 0; i < Engine.GAME_ROUND; i++) {
             gameMatrix[i] = generateRoundData();

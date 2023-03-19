@@ -18,11 +18,10 @@ public class Prime {
     }
 
     private static String[] generateRoundData() {
-        var roundData = new String[Engine.GAME_ROUND - 1];
-
         int gameNumber = Utils.randomize();
-
         String rightAnswer = isPrime(gameNumber) ? "yes" : "no";
+
+        var roundData = new String[Engine.GAME_ROUND - 1];
 
         roundData[0] = "Question: " + gameNumber;
         roundData[1] = rightAnswer;
@@ -32,9 +31,9 @@ public class Prime {
 
 
     public static void primeGame() {
-        String gameRule = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
-
         var gameMatrix = new String[Engine.GAME_ROUND][Engine.GAME_ROUND - 1];
+
+        String gameRule = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
         for (int i = 0; i < Engine.GAME_ROUND; i++) {
             gameMatrix[i] = generateRoundData();
