@@ -25,7 +25,6 @@ public class GCD {
 
     public static void gcdGame() {
         var gameMatrix = new String[Engine.GAME_ROUND][Engine.GAME_ROUND - 1];
-
         String gameRule = "Find the greatest common divisor of given numbers.";
 
         for (int i = 0; i < Engine.GAME_ROUND; i++) {
