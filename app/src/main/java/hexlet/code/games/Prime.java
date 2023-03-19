@@ -33,11 +33,11 @@ public class Prime {
     public static void primeGame() {
         var gameMatrix = new String[Engine.GAME_ROUND][Engine.GAME_ROUND - 1];
 
-        var gameRule = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+        var gameRules = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
         for (int i = 0; i < Engine.GAME_ROUND; i++) {
             gameMatrix[i] = generateRoundData();
         }
-        Engine.gameRun(gameRule, gameMatrix);
+        Engine.gameRun(gameRules, gameMatrix);
     }
 }
