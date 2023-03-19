@@ -4,18 +4,29 @@ import hexlet.code.Engine;
 import hexlet.code.Utils;
 
 public class Even {
+
+    private static boolean isEven(int number) {
+        return number % 2 == 0;
+    }
+
+    private static String[] generateRoundData() {
+        var roundData = new String[Engine.GAME_ROUND - 1];
+        int gameNumber = Utils.randomize();
+        String rightAnswer = isEven(gameNumber) ? "yes" : "no";
+
+        roundData[0] = "Question: " + gameNumber;
+        roundData[1] = rightAnswer;
+        return roundData;
+    }
+
     public static void evenGame() {
         String gameRule = "Answer 'yes' if the number is even, otherwise answer 'no'.";
 
-        var roundInfo = new String[Engine.GAME_ROUND][Engine.GAME_ROUND - 1];
+        var gameMatrix = new String[Engine.GAME_ROUND][Engine.GAME_ROUND - 1];
 
         for (int i = 0; i < Engine.GAME_ROUND; i++) {
-            int gameNumber = Utils.randomize();
-            String rightAnswer = gameNumber % 2 == 0 ? "yes" : "no";
-
-            roundInfo[i][0] = "Question: " + gameNumber;
-            roundInfo[i][1] = rightAnswer;
+            gameMatrix[i] = generateRoundData();
         }
-        Engine.gameRun(gameRule, roundInfo);
+        Engine.gameRun(gameRule, gameMatrix);
     }
 }

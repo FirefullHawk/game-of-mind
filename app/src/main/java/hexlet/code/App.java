@@ -32,6 +32,7 @@ public class App {
             case "5" -> Progression.progression();
             case "6" -> Prime.primeGame();
             case "0" -> {
+                System.out.println("You're out. If you want to start over, use the 'make run-dist' command.");
                 return;
             }
             default -> System.out.println("Please, choose something else");

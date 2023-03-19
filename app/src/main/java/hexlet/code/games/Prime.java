@@ -17,20 +17,28 @@ public class Prime {
         return true;
     }
 
+    private static String[] generateRoundData() {
+        var roundData = new String[Engine.GAME_ROUND - 1];
+
+        int gameNumber = Utils.randomize();
+
+        String rightAnswer = isPrime(gameNumber) ? "yes" : "no";
+
+        roundData[0] = "Question: " + gameNumber;
+        roundData[1] = rightAnswer;
+
+        return roundData;
+    }
+
+
     public static void primeGame() {
         String gameRule = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
-        var roundInfo = new String[Engine.GAME_ROUND][Engine.GAME_ROUND - 1];
+        var gameMatrix = new String[Engine.GAME_ROUND][Engine.GAME_ROUND - 1];
 
         for (int i = 0; i < Engine.GAME_ROUND; i++) {
-
-            int gameNumber = Utils.randomize();
-
-            String rightAnswer = isPrime(gameNumber) ? "yes" : "no";
-
-            roundInfo[i][0] = "Question: " + gameNumber;
-            roundInfo[i][1] = rightAnswer;
+            gameMatrix[i] = generateRoundData();
         }
-        Engine.gameRun(gameRule, roundInfo);
+        Engine.gameRun(gameRule, gameMatrix);
     }
 }

@@ -21,23 +21,30 @@ public class Calc {
             default -> firstNumber + secondNumber;
         };
     }
+
+    private static String[] generateRoundData() {
+        var roundData = new String[Engine.GAME_ROUND - 1];
+
+        final int setDifficult = 30;
+        int gameNumber1 = Utils.randomize(setDifficult);
+        int gameNumber2 = Utils.randomize(setDifficult);
+        String gameOperator = operationRandomize();
+
+        String rightAnswer = Integer.toString(operationSwitch(gameNumber1, gameNumber2, gameOperator));
+
+        roundData[0] = "Question: " + gameNumber1 + " " + gameOperator + " " + gameNumber2;
+        roundData[1] = rightAnswer;
+        return roundData;
+    }
+
     public static void calcGame() {
         String gameRule = "What is the result of the expression?";
 
-        var roundInfo = new String[Engine.GAME_ROUND][Engine.GAME_ROUND - 1];
+        var gameMatrix = new String[Engine.GAME_ROUND][Engine.GAME_ROUND - 1];
 
         for (int i = 0; i < Engine.GAME_ROUND; i++) {
-
-            final int setDifficult = 30;
-            int gameNumber1 = Utils.randomize(setDifficult);
-            int gameNumber2 = Utils.randomize(setDifficult);
-            String gameOperator = operationRandomize();
-
-            String rightAnswer = Integer.toString(operationSwitch(gameNumber1, gameNumber2, gameOperator));
-
-            roundInfo[i][0] = "Question: " + gameNumber1 + " " + gameOperator + " " + gameNumber2;
-            roundInfo[i][1] = rightAnswer;
+            gameMatrix[i] = generateRoundData();
         }
-        Engine.gameRun(gameRule, roundInfo);
+        Engine.gameRun(gameRule, gameMatrix);
     }
 }

@@ -5,35 +5,43 @@ import hexlet.code.Utils;
 
 public class Progression {
 
-    public static void fillArray(String[] arrayToFill, int progressiveMember) {
-        for (int i = 1; i < arrayToFill.length; i++) {
-            int nextMember = Integer.parseInt(arrayToFill[0]) + progressiveMember * i;
-            arrayToFill[i] = Integer.toString(nextMember);
+    public static String[] getProgression(int firstMember, int arrayLength, int progressiveMember) {
+        var arrayProgressive = new String[arrayLength];
+
+        for (int i = 0; i < arrayLength; i++) {
+            int nextMember = firstMember + progressiveMember * i;
+            arrayProgressive[i] = Integer.toString(nextMember);
         }
+        return arrayProgressive;
     }
+
+    private static String[] generateRoundData() {
+        var roundData = new String[Engine.GAME_ROUND - 1];
+
+        final int firstMember = Utils.randomize();
+        final int progressiveLength = Utils.randomize(5, 15);
+        final int progressiveMember = Utils.randomize(1, 5);
+
+        String[] arrayOfGame = getProgression(firstMember, progressiveLength, progressiveMember);
+
+        int positionToHide = Utils.randomize(arrayOfGame.length);
+        String rightAnswer = arrayOfGame[positionToHide];
+        arrayOfGame[positionToHide] = "..";
+
+        roundData[0] = "Question: " + String.join(" ", arrayOfGame);
+        roundData[1] = rightAnswer;
+
+        return roundData;
+    }
+
     public static void progression() {
         String gameRule = "What number is missing in the progression?";
 
-        var roundInfo = new String[Engine.GAME_ROUND][Engine.GAME_ROUND - 1];
+        var gameMatrix = new String[Engine.GAME_ROUND][Engine.GAME_ROUND - 1];
 
         for (int i = 0; i < Engine.GAME_ROUND; i++) {
-            final int minRangeArray = 5;
-            final int maxRangeArray = 15;
-            final int maxProgressiveNumber = 5;
-
-            String[] arrayOfGame = new String[Utils.randomize(minRangeArray, maxRangeArray)];
-            int progressiveMember = Utils.randomize(maxProgressiveNumber);
-            arrayOfGame[0] = Integer.toString(Utils.randomize());
-
-            fillArray(arrayOfGame, progressiveMember);
-
-            int positionToHide = Utils.randomize(arrayOfGame.length);
-            String rightAnswer = arrayOfGame[positionToHide];
-            arrayOfGame[positionToHide] = "..";
-
-            roundInfo[i][0] = "Question: " + String.join(" ", arrayOfGame);
-            roundInfo[i][1] = rightAnswer;
+            gameMatrix[i] = generateRoundData();
         }
-        Engine.gameRun(gameRule, roundInfo);
+        Engine.gameRun(gameRule, gameMatrix);
     }
 }
