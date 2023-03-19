@@ -10,10 +10,10 @@ public class Even {
     }
 
     private static String[] generateRoundData() {
+        var roundData = new String[Engine.GAME_ROUND - 1];
+
         int gameNumber = Utils.randomize();
         String rightAnswer = isEven(gameNumber) ? "yes" : "no";
-
-        var roundData = new String[Engine.GAME_ROUND - 1];
 
         roundData[0] = "Question: " + gameNumber;
         roundData[1] = rightAnswer;
