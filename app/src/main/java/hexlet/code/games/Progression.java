@@ -37,11 +37,12 @@ public class Progression {
     public static void progression() {
         var gameMatrix = new String[Engine.GAME_ROUND][Engine.GAME_ROUND - 1];
 
-        String gameRule = "What number is missing in the progression?";
+        var gameRule = "What number is missing in the progression?";
 
         for (int i = 0; i < Engine.GAME_ROUND; i++) {
             gameMatrix[i] = generateRoundData();
         }
+
         Engine.gameRun(gameRule, gameMatrix);
     }
 }
