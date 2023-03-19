@@ -33,7 +33,7 @@ public class Prime {
     public static void primeGame() {
         var gameMatrix = new String[Engine.GAME_ROUND][Engine.GAME_ROUND - 1];
 
-        String gameRule = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+        var gameRule = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
         for (int i = 0; i < Engine.GAME_ROUND; i++) {
             gameMatrix[i] = generateRoundData();
