@@ -10,7 +10,7 @@ public class GCD {
     }
 
     private static String[] generateRoundData() {
-        var roundData = new String[Engine.GAME_ROUND - 1];
+        var roundData = new String[2];
 
         final int setStartNumber = 1;
         final int setMaxNumber = 30;
@@ -24,7 +24,7 @@ public class GCD {
     }
 
     public static void gcdGame() {
-        var gameMatrix = new String[Engine.GAME_ROUND][Engine.GAME_ROUND - 1];
+        var gameMatrix = new String[Engine.GAME_ROUND][];
 
         var gameRule = "Find the greatest common divisor of given numbers.";
 

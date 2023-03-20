@@ -21,7 +21,7 @@ public class Prime {
         int gameNumber = Utils.randomize();
         String rightAnswer = isPrime(gameNumber) ? "yes" : "no";
 
-        var roundData = new String[Engine.GAME_ROUND - 1];
+        var roundData = new String[2];
 
         roundData[0] = "Question: " + gameNumber;
         roundData[1] = rightAnswer;
@@ -31,7 +31,7 @@ public class Prime {
 
 
     public static void primeGame() {
-        var gameMatrix = new String[Engine.GAME_ROUND][Engine.GAME_ROUND - 1];
+        var gameMatrix = new String[Engine.GAME_ROUND][];
 
         var gameRule = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 

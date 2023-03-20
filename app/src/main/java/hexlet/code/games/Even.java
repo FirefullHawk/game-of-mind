@@ -10,7 +10,7 @@ public class Even {
     }
 
     private static String[] generateRoundData() {
-        var roundData = new String[Engine.GAME_ROUND - 1];
+        var roundData = new String[2];
 
         int gameNumber = Utils.randomize();
         String rightAnswer = isEven(gameNumber) ? "yes" : "no";
@@ -21,7 +21,7 @@ public class Even {
     }
 
     public static void evenGame() {
-        var gameMatrix = new String[Engine.GAME_ROUND][Engine.GAME_ROUND - 1];
+        var gameMatrix = new String[Engine.GAME_ROUND][];
 
         var gameRule = "Answer 'yes' if the number is even, otherwise answer 'no'.";
 

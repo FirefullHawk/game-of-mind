@@ -16,7 +16,7 @@ public class Progression {
     }
 
     private static String[] generateRoundData() {
-        var roundData = new String[Engine.GAME_ROUND - 1];
+        var roundData = new String[2];
 
         final int firstMember = Utils.randomize();
         final int progressiveLength = Utils.randomize(5, 15);
@@ -35,7 +35,7 @@ public class Progression {
     }
 
     public static void progression() {
-        var gameMatrix = new String[Engine.GAME_ROUND][Engine.GAME_ROUND - 1];
+        var gameMatrix = new String[Engine.GAME_ROUND][];
 
         var gameRule = "What number is missing in the progression?";
 
