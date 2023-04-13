@@ -1,11 +1,5 @@
 package hexlet.code;
 
-import hexlet.code.games.Calc;
-import hexlet.code.games.Even;
-import hexlet.code.games.GCD;
-import hexlet.code.games.Prime;
-import hexlet.code.games.Progression;
-
 import java.util.Scanner;
 public class App {
     public static void main(String[] args) {
@@ -26,11 +20,11 @@ public class App {
 
         switch (userChoice) {
             case "1" -> Cli.greeting();
-            case "2" -> Even.evenGame();
-            case "3" -> Calc.calcGame();
-            case "4" -> GCD.gcdGame();
-            case "5" -> Progression.progression();
-            case "6" -> Prime.primeGame();
+            case "2" -> Starter.gameFormer("2");
+            case "3" -> Starter.gameFormer("3");
+            case "4" -> Starter.gameFormer("4");
+            case "5" -> Starter.gameFormer("5");
+            case "6" -> Starter.gameFormer("6");
             case "0" -> {
                 System.out.println("You're out. If you want to start over, use the 'make run-dist' command.");
                 return;

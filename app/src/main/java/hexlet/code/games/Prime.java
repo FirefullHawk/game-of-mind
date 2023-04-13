@@ -1,9 +1,10 @@
 package hexlet.code.games;
 
-import hexlet.code.Engine;
 import hexlet.code.Utils;
 
 public class Prime {
+    public static final String GAME_RULE = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+
     public static boolean isPrime(int number) {
         if (number < 2) {
             return false;
@@ -17,7 +18,7 @@ public class Prime {
         return true;
     }
 
-    private static String[] generateRoundData() {
+    public static String[] generateRoundData() {
         int gameNumber = Utils.randomize();
         String rightAnswer = isPrime(gameNumber) ? "yes" : "no";
 
@@ -27,18 +28,5 @@ public class Prime {
         roundData[1] = rightAnswer;
 
         return roundData;
-    }
-
-
-    public static void primeGame() {
-        var gameMatrix = new String[Engine.GAME_ROUND][];
-
-        var gameRule = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
-
-        for (int i = 0; i < Engine.GAME_ROUND; i++) {
-            gameMatrix[i] = generateRoundData();
-        }
-
-        Engine.gameRun(gameRule, gameMatrix);
     }
 }

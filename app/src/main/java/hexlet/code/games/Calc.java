@@ -1,9 +1,10 @@
 package hexlet.code.games;
 
-import hexlet.code.Engine;
 import hexlet.code.Utils;
 
 public class Calc {
+    public static final String GAME_RULE = "What is the result of the expression?";
+
     public static String operationRandomize() {
         final int numOfOperation = 3;
         String chooser = Integer.toString(Utils.randomize(numOfOperation));
@@ -22,7 +23,7 @@ public class Calc {
         };
     }
 
-    private static String[] generateRoundData() {
+    public static String[] generateRoundData() {
         var roundData = new String[2];
 
         final int setDifficult = 30;
@@ -35,17 +36,5 @@ public class Calc {
         roundData[0] = "Question: " + gameNumber1 + " " + gameOperator + " " + gameNumber2;
         roundData[1] = rightAnswer;
         return roundData;
-    }
-
-    public static void calcGame() {
-        var gameMatrix = new String[Engine.GAME_ROUND][];
-
-        var gameRule = "What is the result of the expression?";
-
-        for (int i = 0; i < Engine.GAME_ROUND; i++) {
-            gameMatrix[i] = generateRoundData();
-        }
-
-        Engine.gameRun(gameRule, gameMatrix);
     }
 }

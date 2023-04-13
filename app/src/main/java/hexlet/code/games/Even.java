@@ -1,15 +1,15 @@
 package hexlet.code.games;
 
-import hexlet.code.Engine;
 import hexlet.code.Utils;
 
 public class Even {
+    public static final String GAME_RULE = "Answer 'yes' if the number is even, otherwise answer 'no'.";
 
     private static boolean isEven(int number) {
         return number % 2 == 0;
     }
 
-    private static String[] generateRoundData() {
+    public static String[] generateRoundData() {
         var roundData = new String[2];
 
         int gameNumber = Utils.randomize();
@@ -18,17 +18,5 @@ public class Even {
         roundData[0] = "Question: " + gameNumber;
         roundData[1] = rightAnswer;
         return roundData;
-    }
-
-    public static void evenGame() {
-        var gameMatrix = new String[Engine.GAME_ROUND][];
-
-        var gameRule = "Answer 'yes' if the number is even, otherwise answer 'no'.";
-
-        for (int i = 0; i < Engine.GAME_ROUND; i++) {
-            gameMatrix[i] = generateRoundData();
-        }
-
-        Engine.gameRun(gameRule, gameMatrix);
     }
 }
